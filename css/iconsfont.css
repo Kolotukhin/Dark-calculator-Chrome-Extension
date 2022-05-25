@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "iconfont";
+  /*src: url("chrome-extension://__MSG_@@extension_id__/fonts/iconfont.woff");*/
+  /*src: url("chrome-extension://__MSG_@@extension_id__/fonts/iconfont.eot?z126jh");*/
+  src: /*url("chrome-extension://__MSG_@@extension_id__/fonts/iconfont.eot?z126jh#iefix") format("embedded-opentype"),*/
+    url("chrome-extension://__MSG_@@extension_id__/fonts/iconfont.ttf?z126jh") format("truetype"),
+    /*url("chrome-extension://__MSG_@@extension_id__/fonts/iconfont.woff?z126jh") format("woff"),*/
+      url("chrome-extension://__MSG_@@extension_id__/fonts/iconfont.svg?z126jh#iconfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="dci-"]::before,
+[class*="dci-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "iconfont" !important;
+  speak-as: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dci-arrows-alt_dcalc_pv:before {
+  content: "\e902";
+}
+.dci-asterisk:before {
+  content: "\e903";
+}
+.dci-backspace:before {
+  content: "\e904";
+}
+.dci-divide:before {
+  content: "\e906";
+}
+.dci-dot-circle:before {
+  content: "\e907";
+}
+.dci-equals:before {
+  content: "\e908";
+}
+.dci-minus:before {
+  content: "\e90c";
+}
+.dci-plus:before {
+  content: "\e90f";
+}
+.dci-zoom-minus_dcalc_pv:before {
+  content: "\e910";
+}
+.dci-zoom-plus_dcalc_pv:before {
+  content: "\e911";
+}
+.dci-times_dcalc_pv:before {
+  content: "\e912";
+}
+.dci-exponentiate:before {
+  content: "\ea69";
+}

@@ -1,0 +1,88 @@
+:root {
+    --width_dcalc_pv: 200px;
+}
+
+#dd_div_dcalc_pv {
+    position: absolute;
+    top: calc(var(--width_dcalc_pv) * 0.27);
+    right: calc(var(--width_dcalc_pv) * 1.348);
+    transition: "all 1s ease-in-out";
+    z-index: 2147483647;
+    width: calc(var(--width_dcalc_pv) * 0.4);
+
+    transition: all 2s ease-in-out;
+    box-sizing: content-box;
+    max-width: none;
+    color-scheme: normal;
+}
+
+.controlbtn_dcalc_pv {
+    display: grid;
+    grid-template-areas: "dci-arrows-alt_dcalc_pv dci-zoom-plus_dcalc_pv dci-zoom-minus_dcalc_pv dci-times_dcalc_pv";
+    grid-row-gap: calc(var(--width_dcalc_pv) / 40);
+    grid-column-gap: calc(var(--width_dcalc_pv) / 40);
+}
+
+.btn_dcalc_pv {
+    position: relative;
+
+    padding: calc(var(--width_dcalc_pv) / 53.39);
+    left: calc(var(--width_dcalc_pv) / 1.343);
+    top: calc(var(--width_dcalc_pv) / 5.98);
+    width: calc(var(--width_dcalc_pv) / 10);
+    height: calc(var(--width_dcalc_pv) / 10);
+
+    z-index: 2147483646;
+
+    font-size: calc(var(--width_dcalc_pv) / 14.56);
+    text-align: center;
+    user-select: none;
+
+    line-height: normal;
+    box-sizing: content-box;
+    max-width: none;
+
+    /*text-align: start;
+    text-size-adjust: auto;
+    -webkit-box-sizing: content-box;
+    -webkit-text-size-adjust: auto;*/
+}
+
+#mainframe_dcalc_pv {
+    width: calc(var(--width_dcalc_pv) * 1.618);
+    height: calc(var(--width_dcalc_pv) * 2.103);
+    box-sizing: content-box;
+    max-width: none !important;
+}
+
+.dci-zoom-plus_dcalc_pv:hover,
+.dci-zoom-minus_dcalc_pv:hover {
+    color: white;
+    font-size: calc(var(--width_dcalc_pv) / 13);
+}
+
+.dci-arrows-alt_dcalc_pv:hover,
+.dci-times_dcalc_pv:hover {
+    color: white;
+    font-size: calc(var(--width_dcalc_pv) / 11);
+}
+
+.dci-arrows-alt_dcalc_pv {
+    color: #4b4b4a;
+    cursor: pointer;
+}
+
+.dci-zoom-plus_dcalc_pv {
+    color: #4b4b4a;
+    font-size: calc(var(--width_dcalc_pv) / 16);
+    cursor: pointer;
+}
+.dci-zoom-minus_dcalc_pv {
+    color: #4b4b4a;
+    font-size: calc(var(--width_dcalc_pv) / 16);
+    cursor: pointer;
+}
+.dci-times_dcalc_pv {
+    cursor: pointer;
+    color: whitesmoke;
+}

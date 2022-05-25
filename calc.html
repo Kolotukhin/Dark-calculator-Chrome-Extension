@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="description" content="Calculator">
+  <meta name="keywords" content="Calculator">
+  <meta name="author" content="Pavel Kolotukhin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="css/iconsfont.css">
+  <!-- css/iconsfont.css / http://127.0.0.1:3000/test/iconsfont.css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- css/style.css / http://127.0.0.1:3000/css/style.css -->
+</head>
+<style>
+  :root {
+    --orange-dc: #f89809;
+    --grey-white-dc: #868685;
+    --grey-dc: #4b4b4a;
+    color-scheme: normal;
+  }
+
+  body {
+    background: rgba(255, 255, 255, 0);
+    margin: 0px;
+  }
+
+  .ddcalc {
+    margin: auto;
+    width: var(--width_dcalc_pv);
+    height: calc(var(--width_dcalc_pv) * 1.78);
+    border-radius: calc(var(--width_dcalc_pv) / 16.18);
+    background: black;
+    color: white;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+      sans-serif;
+    padding: calc(var(--width_dcalc_pv) / 12.94);
+    box-shadow: 2px 7px 15px -1px black;
+  }
+
+  .dc-fouscalc {
+    height: calc(var(--width_dcalc_pv) / 6.47);
+    left: calc(var(--width_dcalc_pv) / (-49.03));
+    top: calc(var(--width_dcalc_pv) / (-49.03));
+    font-size: calc(var(--width_dcalc_pv) / 25);
+    color: var(--grey-dc);
+    position: relative;
+  }
+
+  /*.calc:focus {
+    color: lime;
+    text-shadow: 0px 0px calc(var(--width_dcalc_pv) / 33) lime;
+}*/
+  .dcscreenfirst {
+    height: calc(var(--width_dcalc_pv) / 11.326);
+    text-align: right;
+    color: var(--grey-dc);
+    margin-right: calc(var(--width_dcalc_pv) / 11.326);
+    margin-bottom: calc(var(--width_dcalc_pv) / 48.54);
+  }
+
+  .dcscreen {
+    height: calc(var(--width_dcalc_pv) / 6.47);
+    padding-right: calc(var(--width_dcalc_pv) / 17.8);
+    padding-bottom: calc(var(--width_dcalc_pv) / 17.8);
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: calc(var(--width_dcalc_pv) / 8.09);
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+  }
+
+  .dcscreenfirst p {
+    font-size: calc(var(--width_dcalc_pv) / 12.94);
+    user-select: none;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .dcscreen p {
+    font-size: calc(var(--width_dcalc_pv) / 5.663);
+    margin: 0px 0px 0px 0px;
+  }
+
+  .dc-buttons {
+    display: grid;
+    grid-template-areas:
+      "ac dci-backspace dci-exponentiate dci-divide"
+      "dcseven dceight dcnine dci-asterisk"
+      "dcfour dcfive dcsix dci-minus"
+      "dcone dctwo dcthree dci-plus"
+      "dczero dczero dcdot dci-equals";
+    grid-row-gap: calc((var(--width_dcalc_pv) / 21.034));
+    grid-column-gap: calc((var(--width_dcalc_pv) / 19.416));
+    justify-content: center;
+    font-size: calc(var(--width_dcalc_pv) / 11.326);
+  }
+
+  .dc-bn.dczero {
+    grid-area: dczero;
+    width: 100%;
+    border-radius: calc(var(--width_dcalc_pv) / 5);
+  }
+
+  .dc-bn {
+    width: calc(var(--width_dcalc_pv) / 5);
+    height: calc(var(--width_dcalc_pv) / 5);
+    background: var(--grey-dc);
+    border-radius: 50%;
+    text-align: center;
+    line-height: calc((var(--width_dcalc_pv) / 4.65));
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .bg-dc-orange {
+    background: var(--orange-dc);
+    font-size: calc(var(--width_dcalc_pv) / 15);
+  }
+
+  .bg-dc-grey {
+    background: var(--grey-white-dc);
+    color: black;
+    font-weight: 900;
+  }
+
+  .dc-bn:hover {
+    filter: brightness(120%);
+    box-shadow: 0px 0px calc(var(--width_dcalc_pv) / 50) 0px gray;
+  }
+
+  .dc-bn:active {
+    filter: brightness(120%);
+    box-shadow: 0px 0px calc(var(--width_dcalc_pv) / 50) 0px gray inset;
+  }
+
+  .dci-exponentiate {
+    line-height: calc((var(--width_dcalc_pv) / 4.5));
+    font-size: calc((var(--width_dcalc_pv) / 9));
+    text-indent: calc(var(--width_dcalc_pv) / 33);
+  }
+
+  .ac {
+    line-height: calc((var(--width_dcalc_pv) / 4.8));
+    font-size: calc((var(--width_dcalc_pv) / 10));
+  }
+
+  .dci-backspace {
+    line-height: calc((var(--width_dcalc_pv) / 4.5));
+    font-size: calc((var(--width_dcalc_pv) / 10));
+    text-indent: calc(var(--width_dcalc_pv/-2));
+  }
+</style>
+
+<body>
+  <div class="ddcalc" id="dcalc">
+    <div class="dc-fouscalc dci-dot-circle"></div>
+    <div class="dcscreenfirst">
+      <p></p>
+    </div>
+    <div class="dcscreen">
+      <p>0</p>
+    </div>
+    <div class="dc-buttons">
+      <div class="dc-bn ac bg-dc-grey">C</div>
+      <div class="dc-bn dci-backspace bg-dc-grey"></div>
+      <div class="dc-bn dci-exponentiate bg-dc-grey"></div>
+      <div class="dc-bn dci-divide bg-dc-orange"></div>
+
+      <div class="dc-bn dcseven">7</div>
+      <div class="dc-bn dceight">8</div>
+      <div class="dc-bn dcnine">9</div>
+      <div class="dc-bn dci-asterisk bg-dc-orange"></div>
+
+      <div class="dc-bn dcfour">4</div>
+      <div class="dc-bn dcfive">5</div>
+      <div class="dc-bn dcsix">6</div>
+      <div class="dc-bn dci-minus bg-dc-orange"></div>
+
+      <div class="dc-bn dcone">1</div>
+      <div class="dc-bn dctwo">2</div>
+      <div class="dc-bn dcthree">3</div>
+      <div class="dc-bn dci-plus bg-dc-orange"></div>
+
+      <div class="dc-bn dczero">0</div>
+      <div class="dc-bn dcdot">.</div>
+      <div class="dc-bn dci-equals bg-dc-orange"></div>
+    </div>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>
